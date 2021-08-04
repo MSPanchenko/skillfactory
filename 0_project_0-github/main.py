@@ -15,6 +15,7 @@ _max_number = 101
 def game_core_v2(number):
     count = 1
     predict = np.random.randint(_min_number, _max_number)
+    # копируем минимум и максимум для локального редактирования диапазона чисел
     min_number = _min_number
     max_number = _max_number
     while number != predict:
@@ -25,6 +26,7 @@ def game_core_v2(number):
         elif number < predict:
             max_number = predict
 
+        # каждый раз при новой итерации цикла сокращаем в 2 раза диапазон возможных значений числа
         diff = max_number - min_number
         diff = 1 if diff == 1 else int(diff / 2)
 
